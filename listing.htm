@@ -1,0 +1,122 @@
+<!-- Author: Muhammad Osama Nadeem 
+Roll Number: 104659862  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Listing - BuyOnline</title>
+    <script src="listing.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .manager-info {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+        h1 {
+            margin: 0;
+        }
+        .header-buttons {
+            margin-top: 10px;
+        }
+        .header-buttons a {
+            color: white;
+            text-decoration: none;
+            background-color: #0044cc;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .header-buttons a:hover {
+            background-color: #003399;
+        }
+        form {
+            background-color: white;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #003399;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="manager-info" id="managerInfo"></div>
+        <h1>List New Item</h1>
+        <div class="header-buttons">
+            <a href="listing.htm">List Items</a>
+            <a href="processing.htm">Process Sold Items</a>
+            <a href="#" id="logoutButton" style="background-color: #ff3333;">Logout</a>
+        </div>
+    </header>
+
+    <form id="listingForm" action="listing_process.php" method="post">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
+
+        <label for="unitPrice">Unit Price:</label>
+        <input type="number" id="unitPrice" name="unitPrice" step="0.01" min="0.01" required>
+
+        <label for="quantityAvailable">Quantity Available:</label>
+        <input type="number" id="quantityAvailable" name="quantityAvailable" min="1" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <input type="submit" value="Add Item">
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const managerId = localStorage.getItem('managerId');
+            if (managerId) {
+                document.getElementById('managerInfo').textContent = "Manager ID: " + managerId;
+            } else {
+                window.location.href = 'mlogin.htm';
+            }
+        });
+    </script>
+
+</body>
+</html>

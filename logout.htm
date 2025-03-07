@@ -1,0 +1,60 @@
+<!-- Author: Muhammad Osama Nadeem 
+Roll Number: 104659862  
+Logout with displaying ID
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - BuyOnline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: white;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="managerMessage"></h1>
+        <h1>Logout Successful</h1>
+        <p>You have been successfully logged out. Thank you for using BuyOnline.</p>
+        <p><a href="buyonline.htm">Click here to log in again</a></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const managerId = urlParams.get('managerId');
+        const managerMessage = document.getElementById('managerMessage');
+        if (managerId) {
+            managerMessage.textContent = `${managerId}`;
+        } else {
+            managerMessage.textContent = `Goodbye!`;
+        }
+    </script>
+
+</body>
+</html>

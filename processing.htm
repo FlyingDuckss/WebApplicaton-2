@@ -1,0 +1,111 @@
+<!-- Author: Muhammad Osama Nadeem 
+Roll Number: 104659862  
+Manager UI to show data and process
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Sold Items - BuyOnline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .manager-info {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .header-buttons {
+            margin-top: 10px;
+        }
+        .header-buttons a {
+            color: white;
+            text-decoration: none;
+            background-color: #0044cc;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .header-buttons a:hover {
+            background-color: #003399;
+        }
+        .logout-button {
+            background-color: #ff3333;
+        }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #0044cc;
+            color: white;
+        }
+        input[type="submit"], .process-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, .process-button:hover {
+            background-color: #218838;
+        }
+        .process-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="manager-info" id="managerInfo"></div>
+        <h1>Process Sold Items</h1>
+        <div class="header-buttons">
+            <a href="listing.htm">List Items</a>
+            <a href="processing.htm">Process Sold Items</a>
+            <a id="logoutButton" class="logout-button">Logout</a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div id="soldItemsTable"></div> 
+        <button class="process-button" id="processSoldItemsButton">Process Sold Items</button>
+    </div>
+    <script src="processing.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!-- Author: Muhammad Osama Nadeem 
+Roll Number: 104659862  
+Home page for customer to buy things
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Items - BuyOnline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+        }
+        header .logout {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            text-decoration: none;
+            background-color: #ff3333;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0044cc;
+            color: white;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003399;
+        }
+        .cart-section {
+            margin: 40px auto;
+            width: 80%;
+        }
+        .cart-total {
+            text-align: right;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .action-buttons {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .action-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .confirm-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .cancel-button {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Available Items</h1>
+        <p>Browse items and add to your cart.</p>
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Number</th>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity Available</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="itemList">
+                <!-- Populate table here through feth_data.phpP -->
+            </tbody>
+        </table>
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Item Number</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems">
+                </tbody>
+            </table>
+
+            <div class="cart-total" id="cartTotal">
+                Total Amount: $0
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button class="confirm-button" onclick="confirmPurchase()">Confirm Purchase</button>
+            <button class="cancel-button" onclick="cancelPurchase()">Cancel Purchase</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BuyOnline. All rights reserved.</p>
+    </footer>
+    <script src="buying.js"></script>
+
+</body>
+</html>

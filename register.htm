@@ -1,0 +1,123 @@
+<!-- Author: Muhammad Osama Nadeem 
+Roll Number: 104659862  
+This will register the user
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration - BuyOnline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        form {
+            background-color: white;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #003399;
+        }
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Register as a New Customer</h1>
+    </header>
+
+    <form id="registrationForm" action="register_process.php" method="post">
+        <div class="error" id="errorMsg"></div>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="retypePassword">Re-type Password:</label>
+        <input type="password" id="retypePassword" name="retypePassword" required>
+
+        <label for="phone">Contact Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="0d dddddddd" required>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <footer>
+        <p>&copy; 2024 BuyOnline. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const retypePassword = document.getElementById('retypePassword').value;
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (password !== retypePassword) {
+                e.preventDefault();
+                errorMsg.textContent = "Passwords do not match!";
+            } else {
+                errorMsg.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
